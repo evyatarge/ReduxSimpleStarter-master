@@ -13,8 +13,11 @@ class SearchBar extends Component {
       <div className="search-bar">
         <input
           value={this.state.termToShearch}
-          onChange={ event =>
-              this.onInputChange(event.target.value)
+          onKeyPress={ event => {
+              if(event.key=== 'Enter' ){
+                this.onInputChange(event.target.value);
+              }
+          }
           } />
       </div>
     );
